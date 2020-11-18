@@ -1,5 +1,3 @@
-from bs4 import BeautifulSoup
-import requests
 from dataclasses import dataclass
 
 @dataclass
@@ -22,4 +20,4 @@ class Home:
     surface_of_land_area: int=None
     facades: int=None
     swiming_pool: bool=None
-    state_of_building: str=None           
+    state_of_building: str=None
