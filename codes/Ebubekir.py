@@ -29,19 +29,28 @@ class ImportFromImmoweb:
                 url = 'https://www.immoweb.be/fr/recherche/maison/a-vendre?countries=BE&page='+str(i)+'&orderBy=relevance'
 
                 """we have to use Selenium because we can't execute javascript with only BeatifulSoup"""
+                
+                r = requests.get(url)
+                
+                """We are looking if the url exist or not, if yes then we execute with selenium, if not we stop th while loop"""
+                if r.status_code == 200:
 
-                driver = webdriver.Chrome()
-                driver.implicitly_wait(30)
-                driver.get(url)
+                    driver = webdriver.Chrome()
+                    driver.implicitly_wait(30)
+                    driver.get(url)
+                else:
+                    existed = False
+                    continue
+                
             except:
                 existed = False
                 continue
+
             soup = BeautifulSoup(driver.page_source, 'lxml')
 
             """Once we succeded to get page_source in html format then we will return each url of each property in a list"""
             for p in soup.find_all('li',attrs={"class" :"search-results__item"}):
                 for a in p.find_all('a', attrs={"class" :"card__title-link"}):
-                    #print(a.get('href'))
                     list_of_url.append(a.get('href'))
 
             i+=1
@@ -79,7 +88,7 @@ class ImportFromImmoweb:
             home_type = property_dict["property"]["type"]
             subtype = property_dict["property"]["subtype"]
             price = property_dict["transaction"]["sale"]["price"]
-            sale_type = property_dict["flags"]      #maybe there is a short-cut but for now
+            sale_type = property_dict["flags"]      
             type_of_sale = self.which_sale_type(sale_type)
             room = property_dict["property"]["bedroomCount"]
             area = property_dict["property"]["netHabitableSurface"]
@@ -108,7 +117,7 @@ class ImportFromImmoweb:
                 surface_tot = property_dict["property"]["land"]["surface"]
             else:
                 surface_tot = None
-            if surface_tot != None:
+            if surface_tot != None and area != None:
                 surface_of_land_area = area + surface_tot
             else:
                 surface_of_land_area = area
@@ -120,9 +129,11 @@ class ImportFromImmoweb:
                 state_of_building = None
             swiming_pool = property_dict["property"]["hasSwimmingPool"]
 
-            home = Home(locality, home_type, subtype, price, type_of_sale, room, area, equiped,
-                        furnished, open_fire, terrace, terrace_area, garden, garden_area,
-                        surface_of_land_area, facades, swiming_pool, state_of_building)
+            home = {"locality": locality, "home_type": home_type, "subtype": subtype,"price": price,
+                    "type_of_sale": type_of_sale, "room": room,"area": area,"equiped": equiped,
+                    "furnished": furnished, "open_fire": open_fire, "terrace": terrace, "terrace_area": terrace_area,
+                    "garden": garden, "garden_area": garden_area, "surface_of_land_area": surface_of_land_area,
+                    "facades": facades, "swiming_pool": swiming_pool, "state_of_building": state_of_building}
             home_list.append(home)
         return home_list
 
@@ -162,48 +173,3 @@ class MyThread(Thread):
         dictio = test.get_property_info(urls)
         home_list = test.create_list_from_dict(dictio)
         return home_list
-
-final_list = []
-
-thread = MyThread(1,2)
-thread_2 = MyThread(3,4)
-thread_3 = MyThread(5,6)
-thread_4 = MyThread(7,8)
-thread_5 = MyThread(9,10)
-thread_6 = MyThread(11,12)
-thread_7 = MyThread(13,14)
-thread_8 = MyThread(15,16)
-thread_9 = MyThread(17,18)
-thread_10 = MyThread(19,20)
-thread.start()
-thread_2.start()
-thread_3.start()
-thread_4.start()
-thread_5.start()
-thread_6.start()
-thread_7.start()
-thread_8.start()
-thread_9.start()
-thread_10.start()
-home_list = thread.run()
-home_list_2 = thread_2.run()
-home_list_3 = thread_3.run()
-home_list_4 = thread_4.run()
-home_list_5 = thread_5.run()
-home_list_6 = thread_6.run()
-home_list_7 = thread_7.run()
-home_list_8 = thread_8.run()
-home_list_9 = thread_9.run()
-home_list_10 = thread_10.run()
-final_list.extend(home_list)
-final_list.extend(home_list_2)
-final_list.extend(home_list_3)
-final_list.extend(home_list_4)
-final_list.extend(home_list_5)
-final_list.extend(home_list_6)
-final_list.extend(home_list_7)
-final_list.extend(home_list_8)
-final_list.extend(home_list_9)
-final_list.extend(home_list_10)
-
-print('done')
