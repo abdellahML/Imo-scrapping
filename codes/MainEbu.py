@@ -39,6 +39,7 @@ if __name__ == "__main__":
     home_list_9 = thread_9.run()
     home_list_10 = thread_10.run()
 
+    """Add each list of property to the final_list"""
     final_list.extend(home_list)
     final_list.extend(home_list_2)
     final_list.extend(home_list_3)

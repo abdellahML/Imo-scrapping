@@ -15,11 +15,11 @@ from threading import Thread
 import copy
 
 class ImportFromImmoweb:
-    def import_from_url(self,from_pages, how_many_pages: int):
+    def import_from_url(self,from_pages: int, how_many_pages: int)-> list(str):
         """Import data from immoweb"""
 
-        existed = True
-        i = from_pages
+        existed: bool = True
+        i: int = from_pages
         list_of_url: [str] = []
         while(existed):
             """we are using while loop to stop if url doesn't existe because we have to change page to get all data available
@@ -60,8 +60,8 @@ class ImportFromImmoweb:
             driver.close()
         return list_of_url
 
-    def get_property_info(self, list_of_url):
-        """This function is to get information from property for sale from a list of url given"""
+    def get_property_info(self, list_of_url: list(str)) -> list(dict):
+        """This function is going to get information from property for sale from a list of url given"""
 
         property_list: list = []
 
@@ -79,9 +79,9 @@ class ImportFromImmoweb:
 
         return property_list
     
-    def create_list_from_dict(self, property_list):
+    def create_list_from_dict(self, property_list: list(dict)) -> list(dict):
         """Will create a list of property"""
-        home_list: [Home] = []
+        home_list: [dict] = []
 
         for property_dict in property_list:
             locality = property_dict["property"]["location"]["district"]
@@ -137,7 +137,7 @@ class ImportFromImmoweb:
             home_list.append(home)
         return home_list
 
-    def which_sale_type(self, sale_type):
+    def which_sale_type(self, sale_type: list(bool)) -> str:
         """I've choosed to do a function to do this because i can add something after"""
         
         if sale_type["isPublicSale"]:
@@ -154,7 +154,8 @@ class ImportFromImmoweb:
             type_of_sale = None
         return type_of_sale
     
-    def check_if_existed(self, path, check = None):
+    def check_if_existed(self, path, check = None) -> bool:
+        """Check if 'path' existe and if it's value is equal to check, return True or False"""
 
         if path != check:
             value_to_return = True
@@ -163,11 +164,11 @@ class ImportFromImmoweb:
         return value_to_return
 
 class MyThread(Thread):
-    def __init__(self, to, until):
+    def __init__(self, to: int, until: int):
         Thread.__init__(self)
         self.to = to
         self.until = until
-    def run(self):
+    def run(self) -> list(dict):
         test = ImportFromImmoweb()
         urls = test.import_from_url(self.to, self.until)
         dictio = test.get_property_info(urls)
