@@ -116,7 +116,7 @@ def managing_data(data: List[Dict]) -> List[Dict]:
 
         keys = ["locality", "home_type", "subtype", "price", "type_of_sale", "room", "area", "equipped",
                 "furnished", "open_fire", "terrace", "terrace_area", "garden", "garden_area",
-                "surface_of_land_area", "facades", "swimming_pool", "state_of building"]
+                "surface_of_land_area", "facades", "swimming_pool", "state_of_building"]
         keys_list = []
         for i in dic.keys():
             if i in keys:
@@ -136,10 +136,10 @@ def writing_in_csv(file: str, data: List[Dict]):
     :param file: Path to the csv file.
     :param data: Data to be written
     """
-    with open(file, mode="w") as database:
+    with open(file, mode="a") as database:
         fieldnames = ["locality", "home_type", "subtype", "price", "type_of_sale", "room", "area", "equipped",
                       "furnished", "open_fire", "terrace", "terrace_area", "garden", "garden_area",
-                      "surface_of_land_area", "facades", "swimming_pool", "state_of building"]
+                      "surface_of_land_area", "facades", "swimming_pool", "state_of_building"]
         data_writer = csv.DictWriter(database, fieldnames=fieldnames)
 
         data_writer.writeheader()

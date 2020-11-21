@@ -3,7 +3,7 @@ import requests
 import re
 
 
-from codes import Dataclass
+import Dataclass
 
 
 data_storage_list = []
