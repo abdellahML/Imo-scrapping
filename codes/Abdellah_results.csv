@@ -1,0 +1,17 @@
+adress,price,property type,type of sale, number of rooms, garden, surface area of the plot of land, living area, furnished, terrace, fully equiped kitchen, swimmingpool, states of building, open fire
+"RueColeau4,6061MontigniesSurSambre,BE",55000€,Maison,normal sale,1,No,0.7 are,85 m²,No,No,No,No,old property,No informations
+"HenriJasparlaan184,8434Westende,BE",65000€,Maison,normal sale,1,No,No information,24 m²,No,No,No,No,old property,No informations
+"RuedelaCathédrale29,4000Liege,BE",69000€,Maison,normal sale,1,No,No information,42 m²,No,No,No,No,old property,No informations
+"Franslaan43,8620Nieuport,BE",70000€,Maison,normal sale,1,No,0.28 are,28 m²,No,No,No,No,New,No informations
+"SquareFransHals5,1070Anderlecht,BE",80000€,Maison,normal sale,1,No,12 ares,83 m²,No,No,No,No,old property,No informations
+"Westendelaan100,8430Middelkerke,BE",89000€,Maison,normal sale,1,No,No information,,Yes,No,No,No,old property,No informations
+Ask to get the adress,89000€,Maison,normal sale,1,No,No information,45 m²,No,Yes,No,No,old property,No informations
+"AvenueDocteurZamenhof2,1070Anderlecht,BE",90000€,Maison,normal sale,1,No,No information,38 m²,No,Yes,No,No,old property,No informations
+Ask to get the adress,97500€,Maison,normal sale,1,No,No information,100 m²,No,No,No,No,old property,No informations
+"dronckaertstraat519,8930Lauwe,BE",99000€,Maison,normal sale,1,No,No information,,No,No,No,No,old property,No informations
+"A.Ruzettelaan183,8370Blankenberge,BE",110000€,Maison,normal sale,1,No,0.38 are,38 m²,Yes,Yes,No,No,New,No informations
+"ChausséedeWarneton97,7784BasWarneton,BE",114900€,Maison,normal sale,2,No,No information,60 m²,No,Yes,No,No,old property,No informations
+"PlaceGossart16,7970Beloeil,BE",115000€,Maison,normal sale,5,No,5.9 ares,,No,No,No,No,old property,No informations
+"PlaceGossart16,7970Beloeil,BE",115000€,Maison,normal sale,5,No,5.9 ares,,No,No,No,No,old property,No informations
+"BoulevardLouisMettewie46,1080MolenbeekSaintJean,BE",115000€,Maison,normal sale,5,No,60.13 ares,40 m²,No,Yes,No,No,old property,No informations
+"Chaussée28,7864DeuxAcren,BE",119000€,Maison,normal sale,3,No,No information,135 m²,No,No,No,No,old property,No informations
