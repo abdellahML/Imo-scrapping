@@ -182,13 +182,14 @@ for elem in all_url:
 
 title=['adress', 'price','property type', 'type of sale', ' number of rooms', ' garden', ' surface area of the plot of land', ' living area', ' furnished', ' terrace', ' fully equiped kitchen', ' swimmingpool', ' states of building', ' open fire'
 ]
-with open('Abdellah_results.csv', mode='w') as csv_file:
+with open('Abdellah_results.csv', mode='a') as csv_file:
     fieldnames = title
     writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
     writer.writeheader()
     for item in houses:
         writer.writerow(item)     
+
     
 
 
