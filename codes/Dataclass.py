@@ -17,7 +17,6 @@ class Home:
     terrace_area: int = None
     garden: bool = None
     garden_area: int = None
-    livable_area: int = None
     surface_of_land_area: int = None
     facades: int = None
     swimming_pool: bool = None
