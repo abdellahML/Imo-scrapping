@@ -134,9 +134,9 @@ def writing_in_csv(file: str, data: List[Dict]):
     """
     Write data in a csv file.
     :param file: Path to the csv file.
-    :param data: Data to be written
+    :param data: Data to be written.
     """
-    with open(file, mode="w") as database:
+    with open(file, mode="a") as database:
         fieldnames = ["locality", "home_type", "subtype", "price", "type_of_sale", "room", "area", "equipped",
                       "furnished", "open_fire", "terrace", "terrace_area", "garden", "garden_area",
                       "surface_of_land_area", "facades", "swimming_pool", "state_of building"]
