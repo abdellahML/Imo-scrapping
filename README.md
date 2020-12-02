@@ -1,5 +1,7 @@
 # [Logic-Immo.be](https://www.logic-immo.be/fr/immobilier-belgique.html?gclid=Cj0KCQiAk53-BRD0ARIsAJuNhpsAy7SooC8fFCrIzBoWB8rTnytq8mCw4RPmCzgT7bTSRLlhtNPzI10aAmSFEALw_wcB) and [Immoweb.be](https://www.immoweb.be/fr?gclid=Cj0KCQiAk53-BRD0ARIsAJuNhpsyGuPvCroSEdTkJ32649Ag38X-v5XiioMPEVlNEo-85hcKr1T8JmwaAh_4EALw_wcB) data scraping
 
+![Logo](https://github.com/Melvin-Leroy/Imo-scrapping/blob/main/logo.png)
+
 ## About
 
 First project of BeCode formation.
@@ -29,11 +31,11 @@ There is the different data extracted :
 
 ## File
 
-database.csv (sep=",") is the result of this scraping.
+```database.csv``` (sep=",") is the result of this scraping.
 
 This file is already filled with more than 10.000 data properties.
 
-Abdellah_results.csv (sep=",") is another result for the scraping of logic-immo.
+```Abdellah_results.csv``` (sep=",") is another result for the scraping of logic-immo.
 
 This file is already filled with more than 5.000 data properties.
 
@@ -47,12 +49,12 @@ It took us three days, from the 18th November 2020 to the 20th November 2020.
 
 ## Usage
 
+To install this 
+
 You need to have **Python3**.
 Different packages used :
-- Beautifulsoup4
-- Selenium
-- re
-- threading
+- [Beautifulsoup4](https://beautiful-soup-4.readthedocs.io/en/latest/);
+- [Selenium](https://selenium-python.readthedocs.io/).
 
 For "www.immoweb.be" use the ebu function:
 ```python
@@ -77,13 +79,13 @@ Just run the code.
 
 ## Team member
 
-Abdellah El Ghilbzouri, Junior AI developer,
+[Abdellah El Ghilbzouri](https://github.com/abdellahML), Junior AI developer,
 
-Andreas Margraff, Junior AI developer,
+[Andreas Margraff](https://github.com/andypendent/), Junior AI developer,
 
-Ebubekir Kocadag, Junior AI developer,
+[Ebubekir Kocadag](https://github.com/EbubekirKocadag), Junior AI developer,
 
-Melvin Leroy, Junior AI developer.
+[Melvin Leroy](https://github.com/Melvin-Leroy), Junior AI developer.
 
 ## Things to do
 
